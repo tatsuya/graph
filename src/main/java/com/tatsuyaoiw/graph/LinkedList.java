@@ -46,7 +46,7 @@ public class LinkedList implements Iterable<Integer> {
 	 */
 	@Override
 	public Iterator<Integer> iterator() {
-		return new ListIterator<Integer>(head);
+		return new ListIterator<>(head);
 	}
 
 	private class ListIterator<T> implements Iterator<T> {
@@ -82,6 +82,11 @@ public class LinkedList implements Iterable<Integer> {
 			T data = (T) current.data;
 			current = current.next;
 			return data;
+		}
+
+		@Override
+		public void remove() {
+			throw new UnsupportedOperationException();
 		}
 	}
 }
