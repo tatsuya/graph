@@ -27,4 +27,21 @@ public class TrieTest {
 		assertEquals(6, trie.get("sea"));
 		assertEquals(7, trie.get("shore"));
 	}
+
+	@Test
+	public void testContains() throws Exception {
+		Trie trie = new Trie();
+
+		trie.put("she", 0);
+		trie.put("sells", 1);
+		trie.put("sea", 2);
+		trie.put("shells", 3);
+		trie.put("by", 4);
+		trie.put("the", 5);
+		trie.put("sea", 6);
+		trie.put("shore", 7);
+
+		assertTrue(trie.contains("she"));
+		assertFalse(trie.contains("shoe"));
+	}
 }
